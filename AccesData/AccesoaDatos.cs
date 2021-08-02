@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace AccesData
 {
     public class AccesoaDatos
     {
-        private string cadConexion = @"Data Source=DESKTOP-2RIAEJ3; Initial Catalog=PedidosCarniceria; Integrated Security = true;";
+        private string conexion = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
 
         public AccesoaDatos(string cadenaBD)
         {
-            cadConexion = cadenaBD;
+            conexion = cadenaBD;
         }
         public SqlConnection AbrirConexion(ref string mensaje) // Metodo con parametros de referencia
         {
             SqlConnection conexion1 = new SqlConnection();
-            conexion1.ConnectionString = cadConexion;
+            conexion1.ConnectionString = conexion;
             try
             {
                 conexion1.Open();

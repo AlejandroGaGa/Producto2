@@ -20,7 +20,7 @@ namespace WebPresentacion
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-          Label1.Text =  obj.insertarCarnicero(TextBox1.Text, TextBox2.Text, TextBox3.Text, Convert.ToInt16(TextBox4.Text));
+
         }
     }
 }
