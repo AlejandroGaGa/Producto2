@@ -31,8 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +48,92 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoCarne.cs" />
+    <Compile Include="Carnicero.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="carniceroPedido_Result.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntregaPedido.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelCarniceria.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCarniceria.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelCarniceria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelCarniceria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCarniceria.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pagodelivery_Result.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pedidoaclaración_Result.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repartidor.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShowPedido_Result.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicacion.cs">
+      <DependentUpon>ModelCarniceria.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModelCarniceria.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCarniceria.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ModelCarniceria.edmx.diagram">
+      <DependentUpon>ModelCarniceria.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelCarniceria.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelCarniceria.Context.cs</LastGenOutput>
+      <DependentUpon>ModelCarniceria.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelCarniceria.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCarniceria.edmx</DependentUpon>
+      <LastGenOutput>ModelCarniceria.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
