@@ -12,5 +12,6 @@ namespace Entidades
         public string cel { get; set; }
         public string email { get; set; }
         public short exp { get; set; }
+        public int idcarn { get; set; }
     }
 }
