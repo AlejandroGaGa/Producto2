@@ -409,5 +409,295 @@ namespace LogicadeNegocios
 
             return exit;
         }
+
+        //inicio de actualizaciones
+        public Boolean ActualizarCarnicero(Carnicero nuev, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[5];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "namejson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.name
+            };
+            datos[1] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "celjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.cel
+            };
+            datos[2] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "emailjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.email
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "expjson",
+                SqlDbType = SqlDbType.SmallInt,
+                Direction = ParameterDirection.Input,
+                Value = nuev.exp
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "idcarn",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.idcarn
+            };
+
+            string sentence = "update Carnicero set Nombre=@namejson,Celular=@celjson, Correo=@emailjson,Exp_anios=@expjson where id_Carnicero = @idcarn;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+        public Boolean ActualizarCliente(Cliente nuev, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[5];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Nom",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.name
+            };
+            datos[1] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "ApP",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.ApP
+            };
+            datos[2] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Cel",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Cel
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Correo",
+                SqlDbType = SqlDbType.SmallInt,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Correo
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "idcarn",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.idclient
+            };
+
+            string sentence = "update Cliente set Nombre=@Nom,App=@ApP, ApM=@ApM, Celular=@Cel, Correo= @Correo where id_Cliente = @idclient;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+       
+
+        public Boolean ActualizarEntregaPedido(EntregaPedido nuev, int idselect, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[5];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "F_pedido",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.F_pedido
+            };
+            datos[1] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "F_repartidor",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.F_repartidor
+            };
+            datos[2] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Salida",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Salida
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Entregado",
+                SqlDbType = SqlDbType.SmallInt,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Entregado
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Estado",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Estado
+            };
+           datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Estado",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Estado
+            };
+            datos[4] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "idEnt",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idselect
+            };
+            string sentence = "update EntregaPedido set F_Pedido=@Fped, F_Repartidor=@fRep,Salida=@FechSalida,SeEntrego=@FechEntre, Estado=@Estado where id_Entrega = @idEnt;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+        public Boolean ActualizarPedido(Producto nuev, int idselect, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[6];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "NomProd",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.nameP
+            };
+            datos[1] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Peso",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Peso
+            };
+            datos[2] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Cant",
+                SqlDbType = SqlDbType.SmallInt,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Cantidad
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "PrecioF",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.PrecioF
+            };
+            datos[4] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Nota",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Nota
+            };
+            datos[5] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "idped",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idselect
+            };
+            string sentence = "update Producto set NombreProd=@NomProd, Peso=@Peso,Cantidad=@Cant,PrecioFinal=@Preciofin, NotaEspecial=@Nota, F_Pedido= @fPed where id_prod = @idped;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+        public Boolean ActualizarDelivery(Repartidor nuev, int idselect, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[6];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "NomProd",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.name
+            };
+            datos[1] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Peso",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = nuev.cel
+            };
+            datos[2] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Cant",
+                SqlDbType = SqlDbType.SmallInt,
+                Direction = ParameterDirection.Input,
+                Value = nuev.Licencia
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "idselect",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idselect
+            };
+            
+            string sentence = "update Producto set NombreProd=@NomProd, Peso=@Peso,Cantidad=@Cant,PrecioFinal=@Preciofin, NotaEspecial=@Nota, F_Pedido= @fPed where id_prod = @idselect;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
     }// fin de logica de negocio
 }// fin de namespace

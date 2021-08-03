@@ -13,5 +13,6 @@ namespace Entidades
         public string ApM { get; set; }
         public string Cel { get; set; }
         public string Correo { get; set; }
+        public int idclient { get; set; }
     }
 }
