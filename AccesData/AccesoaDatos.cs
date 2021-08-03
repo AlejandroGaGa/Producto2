@@ -11,7 +11,7 @@ namespace AccesData
 {
     public class AccesoaDatos
     {
-        private string conexion = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+        private string conexion;
 
         public AccesoaDatos(string cadenaBD)
         {

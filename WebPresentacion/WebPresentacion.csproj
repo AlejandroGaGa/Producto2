@@ -19,7 +19,7 @@
     <IISExpressSSLPort>44380</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Entidades">
+      <HintPath>..\Entidades\obj\Debug\Entidades.dll</HintPath>
+    </Reference>
     <Reference Include="LogicadeNegocios">
       <HintPath>..\LogicadeNegocios\obj\Debug\LogicadeNegocios.dll</HintPath>
     </Reference>
