@@ -5,14 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using AccesData;
+using AccessData;
 using Entidades;
 
 namespace LogicadeNegocios
 {
     public class LogicaNego
     {
-        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-2RIAEJ3; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-J97AN1I\SQLEXPRESS; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+
+
         public Boolean InsertarCarnicero(Carnicero nuev, ref string smsexit) 
         {
 

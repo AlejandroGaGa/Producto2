@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
-namespace AccesData
+
+namespace AccessData
 {
     public class AccesoaDatos
     {
+
         private string conexion;
 
         public AccesoaDatos(string cadenaBD)
@@ -213,5 +214,5 @@ namespace AccesData
 
             return salida;
         }
-    }// fin de class
-}//AccesData
+    }
+}

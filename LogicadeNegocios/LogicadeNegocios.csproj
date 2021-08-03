@@ -31,9 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AccesData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AccessData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AccesData\obj\Debug\AccesData.dll</HintPath>
+      <HintPath>..\AccessData\obj\Debug\AccessData.dll</HintPath>
     </Reference>
     <Reference Include="Entidades, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
