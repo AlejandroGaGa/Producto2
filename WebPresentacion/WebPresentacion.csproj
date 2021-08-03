@@ -43,11 +43,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Entidades">
-      <HintPath>..\Entidades\obj\Debug\Entidades.dll</HintPath>
+    <Reference Include="Entidades, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Entidades\bin\Debug\Entidades.dll</HintPath>
     </Reference>
-    <Reference Include="LogicadeNegocios">
-      <HintPath>..\LogicadeNegocios\obj\Debug\LogicadeNegocios.dll</HintPath>
+    <Reference Include="LogicadeNegocios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LogicadeNegocios\bin\Debug\LogicadeNegocios.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />

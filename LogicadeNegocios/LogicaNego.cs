@@ -12,7 +12,7 @@ namespace LogicadeNegocios
 {
     public class LogicaNego
     {
-        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-J97AN1I\SQLEXPRESS; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-2RIAEJ3; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
 
 
         public Boolean InsertarCarnicero(Carnicero nuev, ref string smsexit) 
@@ -24,7 +24,8 @@ namespace LogicadeNegocios
             {
                 // se crea tipo json para agrupar datos
                 ParameterName = "namejson",
-                SqlDbType = SqlDbType.VarChar,
+                SqlDbType = SqlDbType.NVarChar,
+                Size=60,
                 Direction = ParameterDirection.Input,
                 Value = nuev.name
             };
@@ -33,6 +34,7 @@ namespace LogicadeNegocios
                 // se crea tipo json para agrupar datos
                 ParameterName = "celjson",
                 SqlDbType = SqlDbType.VarChar,
+                Size = 12,
                 Direction = ParameterDirection.Input,
                 Value = nuev.cel
             };
@@ -41,6 +43,7 @@ namespace LogicadeNegocios
                 // se crea tipo json para agrupar datos
                 ParameterName = "emailjson",
                 SqlDbType = SqlDbType.VarChar,
+                Size = 100,
                 Direction = ParameterDirection.Input,
                 Value = nuev.email
             };

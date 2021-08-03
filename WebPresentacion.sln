@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1525
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPresentacion", "WebPresentacion\WebPresentacion.csproj", "{D542CCBB-3527-4B4D-AF79-5E0D8C2579DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicadeNegocios", "LogicadeNegocios\LogicadeNegocios.csproj", "{71C786B6-F170-4202-9B9B-CF1D1B25DEF4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2D2F0C58-8FF2-41FA-9642-36DCF3511EF7} = {2D2F0C58-8FF2-41FA-9642-36DCF3511EF7}
+		{8F605A89-ED38-4E68-8EC5-8A4DF366CAFA} = {8F605A89-ED38-4E68-8EC5-8A4DF366CAFA}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{2D2F0C58-8FF2-41FA-9642-36DCF3511EF7}"
 EndProject
