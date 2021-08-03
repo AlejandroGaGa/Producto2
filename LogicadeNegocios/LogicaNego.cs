@@ -163,7 +163,7 @@ namespace LogicadeNegocios
                 Value = EP.Estado
             };
 
-            string sentence = "insert into Cliente values(@FPedjson,@FPedjson,@Salidajson,@Entrejson,@estadojson);";
+            string sentence = "insert into EntregaPedido values(@FPedjson,@FPedjson,@Salidajson,@Entrejson,@estadojson);";
 
             Boolean exit = false;
 
@@ -218,7 +218,7 @@ namespace LogicadeNegocios
                 Value = ped.Pago
             };
 
-            string sentence = "insert into Cliente values(@Fechjson,@FClienjson,@FCarnjson,@Enviojson,@Pagojson);";
+            string sentence = "insert into Pedido values(@Fechjson,@FClienjson,@FCarnjson,@Enviojson,@Pagojson);";
 
             Boolean exit = false;
 
@@ -235,15 +235,15 @@ namespace LogicadeNegocios
             datos[0] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "Fechjson",
-                SqlDbType = SqlDbType.DateTime,
+                ParameterName = "NamePjson",
+                SqlDbType = SqlDbType.VarChar,
                 Direction = ParameterDirection.Input,
                 Value = prod.nameP
             };
             datos[1] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "FClienjson",
+                ParameterName = "Pesojson",
                 SqlDbType = SqlDbType.Int,
                 Direction = ParameterDirection.Input,
                 Value = prod.Peso
@@ -251,23 +251,23 @@ namespace LogicadeNegocios
             datos[2] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "FCarnjson",
-                SqlDbType = SqlDbType.Int,
+                ParameterName = "Cantjson",
+                SqlDbType = SqlDbType.SmallInt,
                 Direction = ParameterDirection.Input,
                 Value = prod.Cantidad
             };
             datos[3] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "Enviojson",
-                SqlDbType = SqlDbType.Bit,
+                ParameterName = "PrecioFjson",
+                SqlDbType = SqlDbType.Float,
                 Direction = ParameterDirection.Input,
                 Value = prod.PrecioF
             };
             datos[4] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "Pagojson",
+                ParameterName = "Notajson",
                 SqlDbType = SqlDbType.VarChar,
                 Direction = ParameterDirection.Input,
                 Value = prod.Nota
@@ -275,13 +275,133 @@ namespace LogicadeNegocios
             datos[5] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "Pagojson",
-                SqlDbType = SqlDbType.VarChar,
+                ParameterName = "FPedjson",
+                SqlDbType = SqlDbType.Int,
                 Direction = ParameterDirection.Input,
                 Value = prod.f_pedido
             };
 
-            string sentence = "insert into Producto values(@Fechjson,@FClienjson,@FCarnjson,@Enviojson,@Pagojson);";
+            string sentence = "insert into Producto values(@NamePjson,@Pesojson,@Cantjson,@PrecioFjson,@Notajson,@FPedjson);";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+
+        public Boolean InsertarRepartidor(Repartidor rep, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[3];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "NamePjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = rep.name
+            };
+            datos[1] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Celjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = rep.cel
+            };
+            datos[2] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Licenjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = rep.Licencia
+            };
+            
+
+            string sentence = "insert into Repartidor values(@NamePjson,@Celjson,@Licenjson);";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+
+        public Boolean InsertarUbicacion(Ubicacion ubi, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[8];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "ColoniaPjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = ubi.colonia
+            };
+            datos[1] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "CalNumjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = ubi.calleNum
+            };
+            datos[2] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Munjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = ubi.Municipio
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Ciudjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = ubi.Ciudad
+            };
+            datos[4] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Refjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = ubi.reference
+            };
+            datos[5] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "Caracjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = ubi.Carac
+            };
+            datos[6] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "CPjson",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = ubi.CP
+            };
+            datos[7] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "FClienjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = ubi.f_cliente
+            };
+            string sentence = "insert into Ubicacion values(@ColoniaPjson,@CalNumjson,@Munjson,@Ciudjson,@Refjson,@Caracjson,@CPjson,@FClienjson);";
 
             Boolean exit = false;
 
