@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AccessData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AccessData\bin\Debug\AccessData.dll</HintPath>
+    </Reference>
     <Reference Include="Entidades, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Entidades\bin\Debug\Entidades.dll</HintPath>
@@ -75,16 +79,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Presentacion.aspx" />
+    <Content Include="Carnicero.aspx" />
+    <Content Include="Cliente.aspx" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presentacion.aspx.cs">
-      <DependentUpon>Presentacion.aspx</DependentUpon>
+    <Compile Include="Carnicero.aspx.cs">
+      <DependentUpon>Carnicero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Presentacion.aspx.designer.cs">
-      <DependentUpon>Presentacion.aspx</DependentUpon>
+    <Compile Include="Carnicero.aspx.designer.cs">
+      <DependentUpon>Carnicero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.aspx.cs">
+      <DependentUpon>Cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cliente.aspx.designer.cs">
+      <DependentUpon>Cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,21 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AccessData;
 using Entidades;
 using LogicadeNegocios;
 
-
-
 namespace WebPresentacion
 {
-    public partial class Presentacion : System.Web.UI.Page
+    public partial class Cliente : System.Web.UI.Page
     {
-
-        // este el el objeto de la capa negocio 
         LogicaNego obj = null;
-
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -35,17 +29,26 @@ namespace WebPresentacion
         protected void Button1_Click(object sender, EventArgs e)
         {
             //obj de carnicero de capa entidades
-            Carnicero objcarnicero = new Carnicero
+            EntCliente objclient = new EntCliente
             {
                 name = TextBox1.Text,
-                cel = TextBox2.Text,
-                email = TextBox3.Text,
-                exp = Convert.ToInt16(TextBox4.Text)
+                ApP = TextBox2.Text,
+                ApM = TextBox3.Text,
+                Cel = TextBox5.Text,
+                Correo = TextBox4.Text
             };
 
             string smsref = "";
-            obj.InsertarCarnicero(objcarnicero, ref smsref);
+            obj.InsertarCliente(objclient, ref smsref);
             TextBox1.Text = smsref;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            PedidosCarniceriaEntities obj = new PedidosCarniceriaEntities();
+          
+            
+
         }
     }
 }

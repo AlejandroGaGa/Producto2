@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Pedido
+    public class EntPedido
     {
         public DateTime FechaHra { get; set; }
         public int F_cliente { get; set; }

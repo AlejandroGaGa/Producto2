@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class EntregaPedido
+    public class EntEntregaPedido
     {
         public int F_pedido { get; set; }
         public int F_repartidor { get; set; }

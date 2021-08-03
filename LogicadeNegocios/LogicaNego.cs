@@ -13,9 +13,10 @@ namespace LogicadeNegocios
     public class LogicaNego
     {
         AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-2RIAEJ3; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+        // datos desde entity para hacfer muestras anti inyecciones
+        PedidosCarniceriaEntities objEntity = new PedidosCarniceriaEntities();
 
-
-        public Boolean InsertarCarnicero(Carnicero nuev, ref string smsexit) 
+        public Boolean InsertarCarnicero(EntCarnicero nuev, ref string smsexit) 
         {
 
             SqlParameter[] datos = new SqlParameter[4];
@@ -24,7 +25,7 @@ namespace LogicadeNegocios
             {
                 // se crea tipo json para agrupar datos
                 ParameterName = "namejson",
-                SqlDbType = SqlDbType.NVarChar,
+                SqlDbType = SqlDbType.VarChar,
                 Size=60,
                 Direction = ParameterDirection.Input,
                 Value = nuev.name
@@ -60,12 +61,100 @@ namespace LogicadeNegocios
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit, datos);
 
             return exit;
         }
 
-        public Boolean InsertarCliente(Cliente Clien, ref string smsexit)
+
+      
+            public List<EntCliente> GetClientes(ref string msj_salida)
+            {
+                SqlConnection conex = null;
+
+                string query = "select * from Cliente;";
+
+                conex = accesdataline.AbrirConexion(ref msj_salida);
+
+                SqlDataReader ObtenerDatos = null;
+
+                ObtenerDatos = accesdataline.ConsultarReader(query, conex, ref msj_salida);
+
+                List<EntCliente> lista = new List<EntCliente>();
+
+
+                if (ObtenerDatos != null)
+                {
+                    while (ObtenerDatos.Read())
+                    { 
+                         lista.Add(new EntCliente
+                        {
+                             idclient = (int)ObtenerDatos[0],
+                              name = (string)ObtenerDatos[1],
+                             ApP = (string)ObtenerDatos[2],
+                              ApM = (string)ObtenerDatos[3],
+                              Cel = (string)ObtenerDatos[4],
+                             Correo = (string)ObtenerDatos[5],
+                            
+                         
+                        });
+                    }
+                }
+                else
+                {
+                    lista = null;
+                }
+                conex.Close();
+                conex.Dispose();
+
+                return lista;
+
+            }
+
+        public List<EntCarnicero> GetCarniceros(ref string msj_salida)
+        {
+            SqlConnection conex = null;
+
+            string query = "select * from Carnicero;";
+
+            conex = accesdataline.AbrirConexion(ref msj_salida);
+
+            SqlDataReader ObtenerDatos = null;
+
+            ObtenerDatos = accesdataline.ConsultarReader(query, conex, ref msj_salida);
+
+            List<EntCarnicero> lista = new List<EntCarnicero>();
+
+
+            if (ObtenerDatos != null)
+            {
+                while (ObtenerDatos.Read())
+                {
+                    lista.Add(new EntCarnicero
+                    {
+                        idcarn = (int)ObtenerDatos[0],
+                        name = (string)ObtenerDatos[1],
+                        cel = (string)ObtenerDatos[2],
+                        email = (string)ObtenerDatos[3],
+                        exp = (short)ObtenerDatos[4],
+    });
+                }
+            }
+            else
+            {
+                lista = null;
+            }
+            conex.Close();
+            conex.Dispose();
+
+            return lista;
+
+        }
+
+
+
+
+        public Boolean InsertarCliente(EntCliente Clien, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[5];
@@ -75,6 +164,7 @@ namespace LogicadeNegocios
                 // se crea tipo json para agrupar datos
                 ParameterName = "namejson",
                 SqlDbType = SqlDbType.VarChar,
+                Size = 90,
                 Direction = ParameterDirection.Input,
                 Value = Clien.name
             };
@@ -83,6 +173,7 @@ namespace LogicadeNegocios
                 // se crea tipo json para agrupar datos
                 ParameterName = "ApPjson",
                 SqlDbType = SqlDbType.VarChar,
+                Size = 90,
                 Direction = ParameterDirection.Input,
                 Value = Clien.ApP
             };
@@ -91,6 +182,7 @@ namespace LogicadeNegocios
                 // se crea tipo json para agrupar datos
                 ParameterName = "ApMjson",
                 SqlDbType = SqlDbType.VarChar,
+                Size = 90,
                 Direction = ParameterDirection.Input,
                 Value = Clien.ApM
             };
@@ -99,6 +191,7 @@ namespace LogicadeNegocios
                 // se crea tipo json para agrupar datos
                 ParameterName = "celjson",
                 SqlDbType = SqlDbType.VarChar,
+                Size = 20,
                 Direction = ParameterDirection.Input,
                 Value = Clien.Cel
             };
@@ -107,6 +200,7 @@ namespace LogicadeNegocios
                 // se crea tipo json para agrupar datos
                 ParameterName = "correojson",
                 SqlDbType = SqlDbType.VarChar,
+                Size = 150,
                 Direction = ParameterDirection.Input,
                 Value = Clien.Correo
             };
@@ -115,12 +209,12 @@ namespace LogicadeNegocios
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit, datos);
 
             return exit;
         }
 
-        public Boolean InsertarEntrePed(EntregaPedido EP, ref string smsexit)
+        public Boolean InsertarEntrePed(EntEntregaPedido EP, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[5];
@@ -175,7 +269,7 @@ namespace LogicadeNegocios
             return exit;
         }
 
-        public Boolean InsertarPedido(Pedido ped, ref string smsexit)
+        public Boolean InsertarPedido(EntPedido ped, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[5];
@@ -230,7 +324,7 @@ namespace LogicadeNegocios
             return exit;
         }
 
-        public Boolean InsertarProducto(Producto prod, ref string smsexit)
+        public Boolean InsertarProducto(EntProducto prod, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[6];
@@ -294,7 +388,7 @@ namespace LogicadeNegocios
         }
 
 
-        public Boolean InsertarRepartidor(Repartidor rep, ref string smsexit)
+        public Boolean InsertarRepartidor(Delivery rep, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[3];
@@ -335,7 +429,7 @@ namespace LogicadeNegocios
         }
 
 
-        public Boolean InsertarUbicacion(Ubicacion ubi, ref string smsexit)
+        public Boolean InsertarUbicacion(EntUbicacion ubi, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[8];
@@ -414,7 +508,7 @@ namespace LogicadeNegocios
         }
 
         //inicio de actualizaciones
-        public Boolean ActualizarCarnicero(Carnicero nuev, ref string smsexit)
+        public Boolean ActualizarCarnicero(EntCarnicero nuev, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[5];
@@ -469,7 +563,7 @@ namespace LogicadeNegocios
             return exit;
         }
 
-        public Boolean ActualizarCliente(Cliente nuev, ref string smsexit)
+        public Boolean ActualizarCliente(EntCliente nuev, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[5];
@@ -525,7 +619,7 @@ namespace LogicadeNegocios
         }
        
 
-        public Boolean ActualizarEntregaPedido(EntregaPedido nuev, int idselect, ref string smsexit)
+        public Boolean ActualizarEntregaPedido(EntEntregaPedido nuev, int idselect, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[5];
@@ -594,7 +688,7 @@ namespace LogicadeNegocios
 
             return exit;
         }
-        public Boolean ActualizarPedido(Producto nuev, int idselect, ref string smsexit)
+        public Boolean ActualizarPedido(EntProducto nuev, int idselect, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[6];
@@ -656,7 +750,7 @@ namespace LogicadeNegocios
             return exit;
         }
 
-        public Boolean ActualizarDelivery(Repartidor nuev, int idselect, ref string smsexit)
+        public Boolean ActualizarDelivery(Delivery nuev, int idselect, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[6];
