@@ -699,5 +699,168 @@ namespace LogicadeNegocios
 
             return exit;
         }
+
+        // Metodos de eliminar
+        public Boolean EliminarCarni(int idCarn, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[1];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "IdCarnPjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idCarn
+            };
+
+            string sentence = "delete from Carnicero where id_Carnicero = @IdCarnPjson;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+        public Boolean EliminarCliente(int idCliente, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[1];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "IdClienPjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idCliente
+            };
+
+            string sentence = "delete from Cliente where id_Cliente = @IdClienPjson";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+        public Boolean EliminarEntrePed(int idEntrega, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[1];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "IdEntrePjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idEntrega
+            };
+
+            string sentence = "delete from EntregaPedido where id_Entrega = @IdEntrePjson;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+
+        public Boolean EliminarPed(int idPed, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[1];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "IdPedjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idPed
+            };
+
+            string sentence = "delete from Pedido where id_Pedido = @IdPedjson;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+        public Boolean EliminarProd(int idProd, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[1];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "IdProdjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idProd
+            };
+
+            string sentence = "delete from Producto where id_prod = @IdProdjson;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+        public Boolean EliminarRep(int idRep, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[1];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "IdRepjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idRep
+            };
+
+            string sentence = "delete from Repartidor where id_Repartidor = @IdRepjson;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
+
+        public Boolean EliminarUbi(int idUbi, ref string smsexit)
+        {
+
+            SqlParameter[] datos = new SqlParameter[1];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "IdUbiPjson",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.Input,
+                Value = idUbi
+            };
+
+            string sentence = "delete from Ubicacion where id_ubicacion = @IdUbiPjson;";
+
+            Boolean exit = false;
+
+            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+
+            return exit;
+        }
     }// fin de logica de negocio
 }// fin de namespace
