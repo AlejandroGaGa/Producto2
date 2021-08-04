@@ -112,8 +112,22 @@ namespace WebPresentacion
 
             };
 
+            EntProducto objprod = new EntProducto
+            {
+                nameP = txtname.Text,
+                Peso =  Convert.ToInt16(txtpeso.Text),
+                Cantidad = Convert.ToInt16(txtcantidad.Text),
+                PrecioF = Convert.ToSingle(txtprecio.Text),
+                Nota = txtnota.Text,
+                f_pedido = Convert.ToInt16(txtNumPedido.Text),
+
+
+          };
+
             string smsref = "";
             obj.InsertarPedido(objPEDIDO, ref smsref);
+            TextBox2.Text = smsref;
+            obj.InsertarProducto(objprod, ref smsref);
             TextBox2.Text = smsref;
         }
 

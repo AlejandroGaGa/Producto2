@@ -438,7 +438,7 @@ namespace LogicadeNegocios
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit, datos);
 
             return exit;
         }
