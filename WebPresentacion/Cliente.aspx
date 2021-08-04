@@ -12,8 +12,7 @@
         <div>
             <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-&nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar sus pedidos" />
-            <br />
+&nbsp;<br />
             <asp:Label ID="Label2" runat="server" Text="ApP"></asp:Label>
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br />
@@ -27,7 +26,11 @@
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar Todos" />
+        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <Columns>
+                <asp:ButtonField ButtonType="Button" CommandName="Update" HeaderText="Editar" ShowHeader="True" Text="Actualizar" />
+            </Columns>
         </asp:GridView>
     </form>
 </body>

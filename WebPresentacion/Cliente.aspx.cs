@@ -45,8 +45,13 @@ namespace WebPresentacion
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-           
-
+            string res = "";
+            GridView1.DataSource = obj.showClients(ref res);
+            GridView1.DataBind();
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                    }
     }
 }

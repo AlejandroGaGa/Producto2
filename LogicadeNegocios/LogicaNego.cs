@@ -344,6 +344,25 @@ namespace LogicadeNegocios
 
 
         }
+        public DataTable showClients(ref string msj)
+        {
+            string query = "select * from Cliente";
+
+            DataSet obj_show = null;
+            DataTable outtable = null;
+
+
+            obj_show = accesdataline.ConsultaDS(query, accesdataline.AbrirConexion(ref msj), ref msj);
+
+            if (obj_show != null)
+            {
+                outtable = obj_show.Tables[0];
+            }
+
+            return outtable;
+
+
+        }
         public DataTable showPedidosClient(string name, ref string msj)
 
         {
