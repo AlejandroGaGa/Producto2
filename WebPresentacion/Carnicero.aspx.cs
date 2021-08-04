@@ -58,10 +58,30 @@ namespace WebPresentacion
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          TextBox1.Text =  GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
+            TextBox1.Text =  GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
             TextBox2.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text;
             TextBox3.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text;
             TextBox4.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            EntCarnicero objcarnicero = new EntCarnicero
+            {
+             
+                name = TextBox1.Text,
+                cel = TextBox2.Text,
+                email = TextBox3.Text,
+                exp = Convert.ToInt16(TextBox4.Text),
+                idcarn = Convert.ToInt16(GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text),
+
+
+            };
+
+            string smsref = "";
+            obj.ActualizarCarnicero(objcarnicero, ref smsref);
+            TextBox1.Text = smsref;
+           
         }
     }
 }

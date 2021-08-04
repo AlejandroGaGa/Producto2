@@ -683,7 +683,7 @@ namespace LogicadeNegocios
                 Direction = ParameterDirection.Input,
                 Value = nuev.exp
             };
-            datos[3] = new SqlParameter
+            datos[4] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
                 ParameterName = "idcarn",
@@ -696,7 +696,7 @@ namespace LogicadeNegocios
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit, datos);
 
             return exit;
         }
@@ -704,7 +704,7 @@ namespace LogicadeNegocios
         public Boolean ActualizarCliente(EntCliente nuev, ref string smsexit)
         {
 
-            SqlParameter[] datos = new SqlParameter[5];
+            SqlParameter[] datos = new SqlParameter[6];
 
             datos[0] = new SqlParameter
             {
@@ -725,23 +725,31 @@ namespace LogicadeNegocios
             datos[2] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
+                ParameterName = "ApM",
+                SqlDbType = SqlDbType.VarChar,
+                Direction = ParameterDirection.Input,
+                Value = nuev.ApM
+            };
+            datos[3] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
                 ParameterName = "Cel",
                 SqlDbType = SqlDbType.VarChar,
                 Direction = ParameterDirection.Input,
                 Value = nuev.Cel
             };
-            datos[3] = new SqlParameter
+            datos[4] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
                 ParameterName = "Correo",
-                SqlDbType = SqlDbType.SmallInt,
+                SqlDbType = SqlDbType.VarChar,
                 Direction = ParameterDirection.Input,
                 Value = nuev.Correo
             };
-            datos[3] = new SqlParameter
+            datos[5] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "idcarn",
+                ParameterName = "idclient",
                 SqlDbType = SqlDbType.Int,
                 Direction = ParameterDirection.Input,
                 Value = nuev.idclient
@@ -751,7 +759,7 @@ namespace LogicadeNegocios
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit, datos);
 
             return exit;
         }

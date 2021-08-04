@@ -26,7 +26,7 @@
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" />
         <asp:Button ID="Button2" runat="server" Text="Mostrar" OnClick="Button2_Click" />
-        <asp:Button ID="Button3" runat="server" Text="Actualizar" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" />
         <br />
         <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>

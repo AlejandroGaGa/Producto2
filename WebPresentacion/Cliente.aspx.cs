@@ -52,6 +52,29 @@ namespace WebPresentacion
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-                    }
+            TextBox1.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
+            TextBox2.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text;
+            TextBox3.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text;
+            TextBox5.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text;
+            TextBox4.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[6].Text;
+            
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            EntCliente objclient = new EntCliente
+            {
+                name = TextBox1.Text,
+                ApP = TextBox2.Text,
+                ApM = TextBox3.Text,
+                Cel = TextBox5.Text,
+                Correo = TextBox4.Text,
+                idclient = Convert.ToInt16(GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text),
+            };
+
+            string smsref = "";
+            obj.ActualizarCliente(objclient, ref smsref);
+            TextBox1.Text = smsref;
+        }
     }
 }
