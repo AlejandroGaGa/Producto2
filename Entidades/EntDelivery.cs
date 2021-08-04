@@ -11,5 +11,6 @@ namespace Entidades
         public string name { get; set; }
         public string cel { get; set; }
         public string Licencia { get; set; }
+        public int id { get; set; }
     }
 }

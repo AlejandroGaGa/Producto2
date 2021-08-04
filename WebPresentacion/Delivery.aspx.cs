@@ -46,5 +46,19 @@ namespace WebPresentacion
             GridView1.DataSource = obj.showDelivery(ref res);
             GridView1.DataBind();
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            EntDelivery objDel = new EntDelivery
+            {
+                name = TextBox1.Text,
+                cel =TextBox2.Text,
+                Licencia = TextBox3.Text
+            };
+
+            string smsref = "";
+            obj.ActualizarDelivery(objDel, ref smsref);
+            TextBox1.Text = smsref;
+        }
     }
 }

@@ -21,8 +21,12 @@
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar " />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Editar" />
         <br />
         <asp:GridView ID="GridView1" runat="server">
+            <Columns>
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Editar" ShowHeader="True" Text="Editar" />
+            </Columns>
         </asp:GridView>
     </form>
 </body>

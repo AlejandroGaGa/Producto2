@@ -929,7 +929,7 @@ namespace LogicadeNegocios
             return exit;
         }
 
-        public Boolean ActualizarDelivery(EntDelivery nuev, int idselect, ref string smsexit)
+        public Boolean ActualizarDelivery(EntDelivery nuev,  ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[6];
@@ -937,37 +937,36 @@ namespace LogicadeNegocios
             datos[0] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "NomProd",
-                SqlDbType = SqlDbType.Int,
+                ParameterName = "nom",
+                SqlDbType = SqlDbType.NVarChar,
                 Direction = ParameterDirection.Input,
                 Value = nuev.name
             };
             datos[1] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "Peso",
-                SqlDbType = SqlDbType.Int,
+                ParameterName = "Celular",
+                SqlDbType = SqlDbType.NVarChar,
                 Direction = ParameterDirection.Input,
                 Value = nuev.cel
             };
             datos[2] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "Cant",
-                SqlDbType = SqlDbType.SmallInt,
+                ParameterName = "Licencia",
+                SqlDbType = SqlDbType.NVarChar,
                 Direction = ParameterDirection.Input,
                 Value = nuev.Licencia
             };
-            datos[3] = new SqlParameter
+            datos[2] = new SqlParameter
             {
                 // se crea tipo json para agrupar datos
-                ParameterName = "idselect",
+                ParameterName = "idrep",
                 SqlDbType = SqlDbType.Int,
                 Direction = ParameterDirection.Input,
-                Value = idselect
+                Value = nuev.
             };
-            
-            string sentence = "update Producto set NombreProd=@NomProd, Peso=@Peso,Cantidad=@Cant,PrecioFinal=@Preciofin, NotaEspecial=@Nota, F_Pedido= @fPed where id_prod = @idselect;";
+            string sentence = "update Repartidor set Nombre=@nom, Celular=@Celular,Licencia=@Licencia where id_Repartidor = @idrep;";
 
             Boolean exit = false;
 
