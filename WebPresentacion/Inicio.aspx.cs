@@ -230,5 +230,51 @@ namespace WebPresentacion
 
             }
         }
+
+        protected void Button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string mensaje = "";
+                List<EntPedido> listpedidos = null;
+
+                listpedidos = obj.GetPedidos(ref mensaje);
+                if (listpedidos != null)
+                {
+                    DropClienteConsulta.Items.Clear();
+                    foreach (EntPedido pedido in listpedidos)
+                    {
+                        //+ cliente.Cel + " " + cliente.Correo + " " + Convert.ToInt32(cliente.idclient) Para obtenjmer datos y actualizar mas adelante
+                        DropClienteConsulta.Items.Add(new ListItem(pedido.id.ToString()));
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                Label1.Text = "Hubo un error" + error;
+
+            }
+        }
+
+        protected void DropClienteConsulta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sms = "";
+            sms = (DropClienteConsulta.SelectedIndex).ToString();
+            TextBox2.Text = sms;
+            Label10.Text = (DropClienteConsulta.SelectedIndex + 1).ToString();
+
+            string res = "";
+            GridView2.DataSource = obj.showCarniceroProduct(DropClienteConsulta.SelectedIndex + 1, ref res);
+            GridView2.DataBind();
+            TextBox2.Text = res;
+
+
+        }
+
+        protected void Button12_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Delivery.aspx");
+        }
     }
 }

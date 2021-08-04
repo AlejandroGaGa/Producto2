@@ -12,6 +12,10 @@
         <div>
             <asp:Label ID="Label1" runat="server" Text="Creaciones de pedidos"></asp:Label>
              &nbsp;/ Deberas ingresar todos estos datos para crear el pedido<div >
+             <asp:Label ID="Label11" runat="server" Text="Registralo si es nuevo en tu carniceria"></asp:Label>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button12" runat="server" OnClick="Button12_Click" Text="REPARTIDOR" />
+                <br />
              <asp:Label ID="Label2" runat="server" Text="Registralo si es nuevo en tu carniceria"></asp:Label>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
              <asp:Button ID="Button1" runat="server" Text="CARNICERO" OnClick="Button1_Click" />
@@ -102,6 +106,20 @@
         <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
        
+        <p>
+            ¿que carnicero atendio el pedido Número
+            <asp:DropDownList ID="DropClienteConsulta" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropClienteConsulta_SelectedIndexChanged">
+            </asp:DropDownList>
+&nbsp;?
+            <asp:Button ID="Button11" runat="server" OnClick="Button11_Click" Text="Cargar Pendidos" />
+        </p>
+        <asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
+        <br />
+        <asp:GridView ID="GridView2" runat="server">
+        </asp:GridView>
+       
     </form>
+    <p>
+        &nbsp;</p>
 </body>
 </html>

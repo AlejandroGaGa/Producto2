@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Delivery
+    public class EntDelivery
     {
         public string name { get; set; }
         public string cel { get; set; }

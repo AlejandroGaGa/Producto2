@@ -81,6 +81,7 @@
   <ItemGroup>
     <Content Include="Carnicero.aspx" />
     <Content Include="Cliente.aspx" />
+    <Content Include="Delivery.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="Cliente.aspx.designer.cs">
       <DependentUpon>Cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery.aspx.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Delivery.aspx.designer.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

@@ -76,5 +76,17 @@ namespace WebPresentacion
             obj.ActualizarCliente(objclient, ref smsref);
             TextBox1.Text = smsref;
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            EntCliente objclient = new EntCliente
+            {
+                idclient = Convert.ToInt16(GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text),
+            };
+
+            string smsref = "";
+            obj.EliminarCliente(objclient, ref smsref);
+            TextBox1.Text = smsref;
+        }
     }
 }

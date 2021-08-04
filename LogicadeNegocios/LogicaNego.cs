@@ -429,17 +429,6 @@ namespace LogicadeNegocios
         public DataTable showPedidosClient(string name, ref string msj)
 
         {
-            //SqlParameter[] datos = new SqlParameter[5];
-
-            //datos[0] = new SqlParameter
-            //{
-            //    // se crea tipo json para agrupar datos
-            //    ParameterName = "name",
-            //    SqlDbType = SqlDbType.NVarChar,
-            //    Size = 100,
-            //    Direction = ParameterDirection.Input,
-            //    Value = name
-            //};
             string query = "select cli.Nombre, cli.App, cli.ApM,ped.FechaHora, prod.NombreProd, prod.Peso, prod.Cantidad, prod.PrecioFinal from Cliente as cli inner join Pedido as ped on cli.id_Cliente = ped.F_Cliente inner join Producto as prod on ped.id_Pedido = prod.F_Pedido where cli.Nombre = '"+name+"'";
 
             DataSet obj_show = null;
@@ -462,6 +451,31 @@ namespace LogicadeNegocios
 
         }
 
+        public DataTable showCarniceroProduct(int idpedido, ref string msj)
+
+        {
+            string query = "select ped.id_Pedido,carn.Nombre from Pedido as ped inner join Carnicero as carn on ped.F_Carnicero = carn.id_Carnicero where ped.id_Pedido ="+idpedido+";";
+
+            DataSet obj_show = null;
+            DataTable outtable = null;
+
+
+            obj_show = accesdataline.ConsultaDS(query, accesdataline.AbrirConexion(ref msj), ref msj);
+
+            if (obj_show != null)
+            {
+                outtable = obj_show.Tables[0];
+                if (obj_show.Tables[0].Rows.Count == 0)
+                {
+                    outtable.Rows.Add(outtable.NewRow());
+                }
+
+            }
+
+            return outtable;
+
+
+        }
         public Boolean InsertarProducto(EntProducto prod, ref string smsexit)
         {
 
@@ -526,7 +540,7 @@ namespace LogicadeNegocios
         }
 
 
-        public Boolean InsertarRepartidor(Delivery rep, ref string smsexit)
+        public Boolean InsertarRepartidor(EntDelivery rep, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[3];
@@ -561,7 +575,7 @@ namespace LogicadeNegocios
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit,datos);
 
             return exit;
         }
@@ -896,7 +910,7 @@ namespace LogicadeNegocios
             return exit;
         }
 
-        public Boolean ActualizarDelivery(Delivery nuev, int idselect, ref string smsexit)
+        public Boolean ActualizarDelivery(EntDelivery nuev, int idselect, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[6];
@@ -967,7 +981,7 @@ namespace LogicadeNegocios
             return exit;
         }
 
-        public Boolean EliminarCliente(int idCliente, ref string smsexit)
+        public Boolean EliminarCliente(EntCliente nuev, ref string smsexit)
         {
 
             SqlParameter[] datos = new SqlParameter[1];
@@ -978,14 +992,14 @@ namespace LogicadeNegocios
                 ParameterName = "IdClienPjson",
                 SqlDbType = SqlDbType.Int,
                 Direction = ParameterDirection.Input,
-                Value = idCliente
+                Value = nuev.idclient
             };
 
             string sentence = "delete from Cliente where id_Cliente = @IdClienPjson";
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit,datos);
 
             return exit;
         }

@@ -36,7 +36,7 @@ go
 
 update Carnicero set Nombre = 'Juan',Celular= 2221334477,Correo = 'juan88@gmail.com',Exp_anios=2 where id_Carnicero = 7
 
-select * from Carnicero
+select * from Pedido
 
 --***********************************************************************************
 insert into Cliente
@@ -237,6 +237,8 @@ inner join Repartidor as rep on EPed.F_Repartidor = rep.id_Repartidor
 where rep.Nombre = @namedelivery
 go
 
+select *from Repartidor
+select * from Producto
 
 --Aclaración sobre un pedido en especifico de un cliente
 create procedure pedidoaclaración(@idprod int)
@@ -245,7 +247,7 @@ select cli.Nombre, cli.App, cli.ApM,ped.FechaHora, prod.NombreProd, prod.Peso, p
 from Cliente as cli
 inner join Pedido as ped on cli.id_Cliente = ped.F_Cliente
 inner join Producto as prod on ped.id_Pedido = prod.F_Pedido
-where prod.id_prod = @idprod;
+where prod.id_prod = 2;
 go
 
 --///////////////////////////////////************************************//////////////////////////////
