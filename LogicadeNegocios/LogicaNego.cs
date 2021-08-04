@@ -12,7 +12,7 @@ namespace LogicadeNegocios
 {
     public class LogicaNego
     {
-        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-2RIAEJ3; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-J97AN1I\SQLEXPRESS; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
         // datos desde entity para hacfer muestras anti inyecciones
         PedidosCarniceriaEntities objEntity = new PedidosCarniceriaEntities();
 
@@ -319,9 +319,61 @@ namespace LogicadeNegocios
 
             Boolean exit = false;
 
-            exit = accesdataline.ModificaBDinsegura(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit);
+            exit = accesdataline.Modify(sentence, accesdataline.AbrirConexion(ref smsexit), ref smsexit, datos);
 
             return exit;
+        }
+
+        //mostrar pedidos
+        public DataTable showPedidos(ref string msj)
+        {
+            string query = "select * from Pedido";
+
+            DataSet obj_show = null;
+            DataTable outtable = null;
+
+            
+            obj_show = accesdataline.ConsultaDS(query, accesdataline.AbrirConexion(ref msj), ref msj);
+
+            if (obj_show != null)
+            {
+                outtable = obj_show.Tables[0];
+            }
+
+            return outtable;
+
+
+        }
+        public DataTable showPedidosClient(string name,ref string msj)
+
+        {
+            SqlParameter[] datos = new SqlParameter[5];
+
+            datos[0] = new SqlParameter
+            {
+                // se crea tipo json para agrupar datos
+                ParameterName = "name",
+                SqlDbType = SqlDbType.NVarChar,
+                Size = 90,
+                Direction = ParameterDirection.Input,
+                Value = name
+            };
+            string query = "select cli.Nombre, cli.App, cli.ApM,ped.FechaHora, prod.NombreProd, prod.Peso, prod.Cantidad, prod.PrecioFinal from Cliente as cli inner join Pedido as ped on cli.id_Cliente = ped.F_Cliente inner join Producto as prod on ped.id_Pedido = prod.F_Pedido where cli.Nombre = '@name'";
+
+            DataSet obj_show = null;
+            DataTable outtable = null;
+
+
+            obj_show = accesdataline.ConsultaDS(query, accesdataline.AbrirConexion(ref msj), ref msj);
+
+            if (obj_show != null)
+            {
+                outtable = obj_show.Tables[0];
+            }
+
+            return outtable;
+
+
         }
 
         public Boolean InsertarProducto(EntProducto prod, ref string smsexit)

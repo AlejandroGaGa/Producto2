@@ -7,12 +7,26 @@ using System.Web.UI.WebControls;
 using Entidades;
 using LogicadeNegocios;
 
+
 namespace WebPresentacion
 {
     public partial class Inicio : System.Web.UI.Page
     {
+    
+        LogicaNego obj = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack == false)
+            {
+                obj = new LogicaNego();
+                Session["obj"] = obj;
+            }
+            else
+            {
+                obj = (LogicaNego)Session["obj"];
+            }
+
+
             try
             {
                 LogicaNego obj = new LogicaNego();
@@ -36,6 +50,8 @@ namespace WebPresentacion
 
             }
 
+            //obtener nombredeclientes
+           
             try
             {
                 LogicaNego obj = new LogicaNego();
@@ -58,6 +74,14 @@ namespace WebPresentacion
                 Label1.Text = "Hubo un error" + error;
 
             }
+
+            //lleno drop para seleccionar activo o no
+            ListItem i;
+            i = new ListItem("Aceptado", "1");
+            Dpnodp.Items.Add(i);
+            i = new ListItem("En proceso", "2");
+            Dpnodp.Items.Add(i);
+   
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -68,6 +92,63 @@ namespace WebPresentacion
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Cliente.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            //obj de carnicero de capa entidades
+            DateTime fecha = DateTime.Now;
+
+            EntPedido objPEDIDO = new EntPedido
+            {
+               
+                FechaHra = fecha,
+                F_cliente = dplClient.SelectedIndex + 1,
+                F_Carnicero = DropDownList1.SelectedIndex + 1,
+                Envio = Dpnodp.SelectedIndex,
+                Pago = TextBox2.Text
+
+
+
+            };
+
+            string smsref = "";
+            obj.InsertarPedido(objPEDIDO, ref smsref);
+            TextBox2.Text = smsref;
+        }
+
+        protected void dplClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sms = "";
+            sms = (dplClient.SelectedIndex).ToString();
+            TextBox2.Text = sms;
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sms = "";
+         sms =   (DropDownList1.SelectedIndex).ToString();
+            TextBox2.Text = sms;
+
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string sms = "";
+            GridView1.DataSource = obj.showPedidos(ref sms);
+            GridView1.DataBind();
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            string res = "";
+            GridView1.DataSource = obj.showPedidosClient(txtname.Text, ref res);
+            GridView1.DataBind();
+            TextBox2.Text = res;
         }
     }
 }
