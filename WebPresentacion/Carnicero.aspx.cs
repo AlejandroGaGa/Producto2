@@ -55,5 +55,13 @@ namespace WebPresentacion
 
             GridView1.DataBind();
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          TextBox1.Text =  GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text;
+            TextBox2.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text;
+            TextBox3.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text;
+            TextBox4.Text = GridView1.Rows[GridView1.SelectedIndex].Cells[5].Text;
+        }
     }
 }

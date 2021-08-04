@@ -28,7 +28,7 @@
         <asp:Button ID="Button2" runat="server" Text="Mostrar" OnClick="Button2_Click" />
         <asp:Button ID="Button3" runat="server" Text="Actualizar" />
         <br />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Editar" ShowHeader="True" Text="Elegir" />
             </Columns>
