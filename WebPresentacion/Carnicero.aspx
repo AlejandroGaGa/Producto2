@@ -22,10 +22,17 @@
             <br />
             <asp:Label ID="Label4" runat="server" Text="Año de experiencia"></asp:Label>
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <br />
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" />
-        <asp:Button ID="Button2" runat="server" Text="Mostrar" />
+        <asp:Button ID="Button2" runat="server" Text="Mostrar" OnClick="Button2_Click" />
+        <asp:Button ID="Button3" runat="server" Text="Actualizar" />
         <br />
+        <asp:GridView ID="GridView1" runat="server">
+            <Columns>
+                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Editar" ShowHeader="True" Text="Elegir" />
+            </Columns>
+        </asp:GridView>
     </form>
 </body>
 </html>

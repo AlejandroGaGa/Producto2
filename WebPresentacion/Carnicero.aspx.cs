@@ -47,5 +47,13 @@ namespace WebPresentacion
             obj.InsertarCarnicero(objcarnicero, ref smsref);
             TextBox1.Text = smsref;
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string res = "";
+          GridView1.DataSource = obj.showCarnicero(ref res);
+
+            GridView1.DataBind();
+        }
     }
 }

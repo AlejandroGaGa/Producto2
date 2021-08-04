@@ -12,7 +12,7 @@ namespace LogicadeNegocios
 {
     public class LogicaNego
     {
-        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-J97AN1I\SQLEXPRESS; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-2RIAEJ3; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
         // datos desde entity para hacfer muestras anti inyecciones
         PedidosCarniceriaEntities objEntity = new PedidosCarniceriaEntities();
 
@@ -110,6 +110,49 @@ namespace LogicadeNegocios
                 return lista;
 
             }
+
+
+        public List<EntPedido> GetPedidos(ref string msj_salida)
+        {
+            SqlConnection conex = null;
+
+            string query = "select * from Pedido;";
+
+            conex = accesdataline.AbrirConexion(ref msj_salida);
+
+            SqlDataReader ObtenerDatos = null;
+
+            ObtenerDatos = accesdataline.ConsultarReader(query, conex, ref msj_salida);
+
+            List<EntPedido> lista = new List<EntPedido>();
+
+
+            if (ObtenerDatos != null)
+            {
+                while (ObtenerDatos.Read())
+                {
+                    lista.Add(new EntPedido
+                    {
+                        id = (int)ObtenerDatos[0],
+                        FechaHra = (DateTime)ObtenerDatos[1],
+                        F_cliente = (int)ObtenerDatos[2],
+                        F_Carnicero = (int)ObtenerDatos[3],
+                        Envio = (bool)ObtenerDatos[4],
+                        Pago = (string)ObtenerDatos[5],
+                      
+                    });
+                }
+            }
+            else
+            {
+                lista = null;
+            }
+            conex.Close();
+            conex.Dispose();
+
+            return lista;
+
+        }
 
         public List<EntCarnicero> GetCarniceros(ref string msj_salida)
         {
@@ -333,6 +376,26 @@ namespace LogicadeNegocios
             DataTable outtable = null;
 
             
+            obj_show = accesdataline.ConsultaDS(query, accesdataline.AbrirConexion(ref msj), ref msj);
+
+            if (obj_show != null)
+            {
+                outtable = obj_show.Tables[0];
+            }
+
+            return outtable;
+
+
+        }
+        //mostrar pedidos
+        public DataTable showCarnicero(ref string msj)
+        {
+            string query = "select * from Carnicero";
+
+            DataSet obj_show = null;
+            DataTable outtable = null;
+
+
             obj_show = accesdataline.ConsultaDS(query, accesdataline.AbrirConexion(ref msj), ref msj);
 
             if (obj_show != null)
