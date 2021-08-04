@@ -12,7 +12,7 @@ namespace LogicadeNegocios
 {
     public class LogicaNego
     {
-        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-2RIAEJ3; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=LAPTOP-3GAI31AJ\MSSQLSERVER01; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
         // datos desde entity para hacfer muestras anti inyecciones
         PedidosCarniceriaEntities objEntity = new PedidosCarniceriaEntities();
 
@@ -964,7 +964,7 @@ namespace LogicadeNegocios
                 ParameterName = "idrep",
                 SqlDbType = SqlDbType.Int,
                 Direction = ParameterDirection.Input,
-                Value = nuev.
+                Value = nuev.id
             };
             string sentence = "update Repartidor set Nombre=@nom, Celular=@Celular,Licencia=@Licencia where id_Repartidor = @idrep;";
 

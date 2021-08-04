@@ -5,9 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Carniceria AGI</title>
+    <link href="Style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/Imag/carne.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
+    <header>
+    <div class="container">
+        <h1>Caeniceria AGI</h1>
+    </div>
+    </header>
+
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Creaciones de pedidos"></asp:Label>
@@ -121,5 +130,7 @@
     </form>
     <p>
         &nbsp;</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </body>
 </html>
