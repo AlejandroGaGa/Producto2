@@ -387,6 +387,25 @@ namespace LogicadeNegocios
 
 
         }
+        public DataTable showDelivery(ref string msj)
+        {
+            string query = "select * from Repartidor";
+
+            DataSet obj_show = null;
+            DataTable outtable = null;
+
+
+            obj_show = accesdataline.ConsultaDS(query, accesdataline.AbrirConexion(ref msj), ref msj);
+
+            if (obj_show != null)
+            {
+                outtable = obj_show.Tables[0];
+            }
+
+            return outtable;
+
+
+        }
         //mostrar pedidos
         public DataTable showCarnicero(ref string msj)
         {

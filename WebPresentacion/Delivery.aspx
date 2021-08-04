@@ -20,6 +20,10 @@
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar " />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar" />
+        <br />
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
     </form>
 </body>
 </html>

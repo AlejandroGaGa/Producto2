@@ -39,5 +39,12 @@ namespace WebPresentacion
             obj.InsertarRepartidor(objDelicery, ref smsref);
             TextBox1.Text = smsref;
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string res = "";
+            GridView1.DataSource = obj.showDelivery(ref res);
+            GridView1.DataBind();
+        }
     }
 }
