@@ -344,21 +344,21 @@ namespace LogicadeNegocios
 
 
         }
-        public DataTable showPedidosClient(string name,ref string msj)
+        public DataTable showPedidosClient(string name, ref string msj)
 
         {
-            SqlParameter[] datos = new SqlParameter[5];
+            //SqlParameter[] datos = new SqlParameter[5];
 
-            datos[0] = new SqlParameter
-            {
-                // se crea tipo json para agrupar datos
-                ParameterName = "name",
-                SqlDbType = SqlDbType.NVarChar,
-                Size = 90,
-                Direction = ParameterDirection.Input,
-                Value = name
-            };
-            string query = "select cli.Nombre, cli.App, cli.ApM,ped.FechaHora, prod.NombreProd, prod.Peso, prod.Cantidad, prod.PrecioFinal from Cliente as cli inner join Pedido as ped on cli.id_Cliente = ped.F_Cliente inner join Producto as prod on ped.id_Pedido = prod.F_Pedido where cli.Nombre = '@name'";
+            //datos[0] = new SqlParameter
+            //{
+            //    // se crea tipo json para agrupar datos
+            //    ParameterName = "name",
+            //    SqlDbType = SqlDbType.NVarChar,
+            //    Size = 100,
+            //    Direction = ParameterDirection.Input,
+            //    Value = name
+            //};
+            string query = "select cli.Nombre, cli.App, cli.ApM,ped.FechaHora, prod.NombreProd, prod.Peso, prod.Cantidad, prod.PrecioFinal from Cliente as cli inner join Pedido as ped on cli.id_Cliente = ped.F_Cliente inner join Producto as prod on ped.id_Pedido = prod.F_Pedido where cli.Nombre = '"+name+"'";
 
             DataSet obj_show = null;
             DataTable outtable = null;
@@ -369,6 +369,10 @@ namespace LogicadeNegocios
             if (obj_show != null)
             {
                 outtable = obj_show.Tables[0];
+                if (obj_show.Tables[0].Rows.Count == 0) {
+                    outtable.Rows.Add(outtable.NewRow());
+                }
+               
             }
 
             return outtable;
