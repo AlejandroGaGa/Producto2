@@ -18,13 +18,13 @@
     </div>
     </header>
         <div>
-            <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Nombre: "></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Cel"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Cel: "></asp:Label>
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Licencia"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Licencia: "></asp:Label>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         </div>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar " BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
