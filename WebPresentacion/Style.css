@@ -5,6 +5,11 @@ header {
     background-color: #BF3D3D;
     background-position: center;
     color: white;
+    position: fixed;
+    margin-top:0px;
+    width:100%;
+    height:20%
+
 }
 
 Button {
