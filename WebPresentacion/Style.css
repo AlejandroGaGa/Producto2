@@ -8,4 +8,10 @@ header {
     color: white;
 }
 
+Button {
+    background-color: #E68282;
+    border-block-color: #FFD5D5;
+    border-block-style: double;
+}
+
 

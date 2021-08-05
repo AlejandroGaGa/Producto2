@@ -88,5 +88,10 @@ namespace WebPresentacion
             obj.EliminarCliente(objclient, ref smsref);
             TextBox1.Text = smsref;
         }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

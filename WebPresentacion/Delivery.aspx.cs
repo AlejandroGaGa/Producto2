@@ -60,5 +60,10 @@ namespace WebPresentacion
             obj.ActualizarDelivery(objDel, ref smsref);
             TextBox1.Text = smsref;
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

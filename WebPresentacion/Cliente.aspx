@@ -18,19 +18,19 @@
     </div>
     </header>
         <div class="container">
-            <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Nombre: "></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;<br />
-            <asp:Label ID="Label2" runat="server" Text="ApP"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Apellido Paterno: "></asp:Label>
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label3" runat="server" Text="ApM"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Apellido Materno:"></asp:Label>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label5" runat="server" Text="Cel"></asp:Label>
+            <asp:Label ID="Label5" runat="server" Text="Cel: "></asp:Label>
             <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Email"></asp:Label>
+            <asp:Label ID="Label4" runat="server" Text="Email: "></asp:Label>
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         </div>
 
@@ -60,6 +60,7 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
+                <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Inicio" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" Width="250px"/>
             </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
