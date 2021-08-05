@@ -6,11 +6,17 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Carnicero</title>
+    <link href="Style.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/Imag/carni.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
     <form id="form1" runat="server">
+        <header>
+    <div class="container">
+        <h1>Canicero</h1>
+    </div>
+    </header>
         <div>
             Insertar Carnicero<br />
             <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
