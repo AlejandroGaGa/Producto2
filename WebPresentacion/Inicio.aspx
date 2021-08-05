@@ -25,19 +25,19 @@
              <h5>* Deberas ingresar todos estos datos para crear el pedido</h5>
              <asp:Label ID="Label11" runat="server" Text="Registralo si es nuevo en tu carniceria"></asp:Label>
              <br />
-                <asp:Button ID="Button12" runat="server" OnClick="Button12_Click" Text="REPARTIDOR" BackColor="#E68282" BorderColor="#FFD5D5" />
+                <asp:Button ID="Button12" runat="server" OnClick="Button12_Click" Text="REPARTIDOR" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
                 <br />
                 <br />
              <asp:Label ID="Label2" runat="server" Text="Registralo si es nuevo en tu carniceria"></asp:Label>
              <br />
              
-             <asp:Button ID="Button1" runat="server" Text="CARNICERO" OnClick="Button1_Click" BackColor="#E68282" BorderColor="#FFD5D5" />
+             <asp:Button ID="Button1" runat="server" Text="CARNICERO" OnClick="Button1_Click" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
                 <br />
              <br />
             <h4>
              <asp:Label ID="Label3" runat="server" Text="Registralo si es nuevo en tu carniceria"></asp:Label>
              </h4>
-             <asp:Button ID="Button2" runat="server" Text="CLIENTE" OnClick="Button2_Click" BackColor="#E68282" BorderColor="#FFD5D5" />
+             <asp:Button ID="Button2" runat="server" Text="CLIENTE" OnClick="Button2_Click" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
            </div>
         </div>
             
@@ -46,12 +46,12 @@
             <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
                             <p>Seleccionar un Carnicero*</p> 
             <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-                <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="CargarCarniceros" BackColor="#E68282" BorderColor="#FFD5D5" />
+                <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="CargarCarniceros" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
                     <br />
             <asp:Label ID="lbCarn" runat="server"></asp:Label>
             <p>Seleccionar cliente*</p> 
             <asp:DropDownList ID="dplClient" runat="server" OnSelectedIndexChanged="dplClient_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-            <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="Cargar Clientes" BackColor="#E68282" BorderColor="#FFD5D5" />
+            <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="Cargar Clientes" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
             <br />
             <asp:Label ID="lbClient" runat="server" Text="Label"></asp:Label>
             <br />
@@ -59,7 +59,7 @@
             <p>
                 <asp:DropDownList ID="DropEnespera" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropEnespera_SelectedIndexChanged">
                 </asp:DropDownList>
-                <asp:Button ID="Button8" runat="server" OnClick="Button8_Click" Text="Cargar" BackColor="#E68282" BorderColor="#FFD5D5" />
+                <asp:Button ID="Button8" runat="server" OnClick="Button8_Click" Text="Cargar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
             </p>
             <p>
                 <asp:Label ID="lbTrue" runat="server" Text="Label"></asp:Label>
@@ -82,8 +82,8 @@
         <div class="container">
             <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
             <p>
-                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Crear Pedido" BackColor="#E68282" BorderColor="#FFD5D5" />
-                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Mostrar Pedidos" BackColor="#E68282" BorderColor="#FFD5D5" />
+                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Crear Pedido" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
+                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Mostrar Pedidos" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
             </p>
             <p>
                 <asp:Label ID="Label4" runat="server" Text="Nombre del producto a vender"></asp:Label>
@@ -115,11 +115,11 @@
                 </asp:DropDownList>
             </p>
             <p>
-                <asp:Button ID="Button7" runat="server" OnClick="Button7_Click" Text="Cargar Pedidos" BackColor="#E68282" BorderColor="#FFD5D5" />
+                <asp:Button ID="Button7" runat="server" OnClick="Button7_Click" Text="Cargar Pedidos" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
             </p>
             <p>
                 <br />
-                <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Agregar Producto" BackColor="#E68282" BorderColor="#FFD5D5" />
+                <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Agregar Producto" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
             </p>
                 </div>
             </div>
@@ -130,11 +130,21 @@
             <h4>Los pedidos los busca por nombre de cliente(Solo nombre)*</h4>
             <p>Ingrese el nombre del cliente
                 <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
-                <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Mostrar Los pedidos del cliente" BackColor="#E68282" BorderColor="#FFD5D5" />
+                <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Mostrar Los pedidos del cliente" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
             </p>
            
        
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#E68282" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+            <SortedAscendingCellStyle BackColor="#FDF5AC" />
+            <SortedAscendingHeaderStyle BackColor="#4D0000" />
+            <SortedDescendingCellStyle BackColor="#FCF6C0" />
+            <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
                     </div>
         </div>
@@ -147,11 +157,21 @@
             <asp:DropDownList ID="DropClienteConsulta" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropClienteConsulta_SelectedIndexChanged">
             </asp:DropDownList>
 &nbsp;?
-            <asp:Button ID="Button11" runat="server" OnClick="Button11_Click" Text="Cargar Pendidos" BackColor="#E68282" BorderColor="#FFD5D5" />
+            <asp:Button ID="Button11" runat="server" OnClick="Button11_Click" Text="Cargar Pendidos" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
         </p>
         <asp:Label ID="Label10" runat="server" Text="Label"></asp:Label>
         <br />
-        <asp:GridView ID="GridView2" runat="server">
+        <asp:GridView ID="GridView2" runat="server" CellPadding="4" ForeColor="#E68282" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+            <SortedAscendingCellStyle BackColor="#FDF5AC" />
+            <SortedAscendingHeaderStyle BackColor="#4D0000" />
+            <SortedDescendingCellStyle BackColor="#FCF6C0" />
+            <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
        </div>
     </div>

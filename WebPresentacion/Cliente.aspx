@@ -35,20 +35,30 @@
         </div>
 
         <div class="container">    
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" BackColor="#E68282" BorderColor="#FFD5D5" />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar Todos" BackColor="#E68282" BorderColor="#FFD5D5" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" BackColor="#E68282" BorderColor="#FFD5D5" />
-        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Eliminar" BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar Todos" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Eliminar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
         <br />
         <br />
         <h5>*No podra eliminar un cliente a menos que no tenga un pedido en curso</h5>
         </div>
 
         <div class="container">
-                <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BorderColor="#E68282">
+                <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#E68282" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Editar" ShowHeader="True" Text="Elegir" />
             </Columns>
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+                    <SortedAscendingCellStyle BackColor="#FDF5AC" />
+                    <SortedAscendingHeaderStyle BackColor="#4D0000" />
+                    <SortedDescendingCellStyle BackColor="#FCF6C0" />
+                    <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
             </div>
     </form>
