@@ -18,27 +18,27 @@
     </div>
     </header>
         <div class="container">
-            <asp:Label ID="Label1" runat="server" Text="Nombre: "></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Nombre</span>
+            <asp:TextBox ID="TextBox1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
 &nbsp;<br />
-            <asp:Label ID="Label2" runat="server" Text="Apellido Paterno: "></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Apellido Paterno:</span>
+            <asp:TextBox ID="TextBox2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Apellido Materno:"></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Apellido Materno:</span>
+            <asp:TextBox ID="TextBox3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label5" runat="server" Text="Cel: "></asp:Label>
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Celular:</span>
+            <asp:TextBox ID="TextBox5" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Email: "></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Email:</span>
+            <asp:TextBox ID="TextBox4" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
         </div>
 
         <div class="container">    
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar Todos" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
-        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Eliminar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button1" class="btn btn-danger" runat="server" OnClick="Button1_Click" Text="Insertar" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button2" class="btn btn-danger" runat="server" OnClick="Button2_Click" Text="Mostrar Todos" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button3" class="btn btn-danger" runat="server" OnClick="Button3_Click" Text="Actualizar" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button4" class="btn btn-danger" runat="server" OnClick="Button4_Click" Text="Eliminar" BorderColor="#FFD5D5" BorderStyle="Double" />
         <br />
         <br />
         <h5>*No podra eliminar un cliente a menos que no tenga un pedido en curso</h5>
@@ -60,7 +60,7 @@
                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                     <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-                <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Inicio" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" Width="250px"/>
+                <asp:Button ID="Button5" class="btn btn-danger" runat="server" OnClick="Button5_Click" Text="Inicio" BorderColor="#FFD5D5" BorderStyle="Double" Width="250px"/>
             </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

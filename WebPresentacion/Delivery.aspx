@@ -18,18 +18,19 @@
     </div>
     </header>
         <div>
-            <asp:Label ID="Label1" runat="server" Text="Nombre: "></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Nombre</span>
+            <asp:TextBox ID="TextBox1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Cel: "></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Celular:</span>
+            <asp:TextBox ID="TextBox2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Licencia: "></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Licencia:</span>
+            <asp:TextBox ID="TextBox3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar " BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Editar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <br />
+        <asp:Button ID="Button1" class="btn btn-danger" runat="server" OnClick="Button1_Click" Text="Insertar " BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button2" class="btn btn-danger" runat="server" OnClick="Button2_Click" Text="Mostrar" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button3" class="btn btn-danger" runat="server" OnClick="Button3_Click" Text="Editar" BorderColor="#FFD5D5" BorderStyle="Double" />
         <br />
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#E68282" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
@@ -46,7 +47,7 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Inicio" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" Width="250px"/>
+        <asp:Button ID="Button4" class="btn btn-danger" runat="server" OnClick="Button4_Click" Text="Inicio" BorderColor="#FFD5D5" BorderStyle="Double" Width="250px"/>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
