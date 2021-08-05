@@ -13,12 +13,6 @@ Button {
     border-block-style: double;
 }
 
-.a {
-    border-block-color: #8F1F1F;
-}
-*a {
-    border-block-color: #8F1F1F;
-}
 #a{
     border-block-color: #8F1F1F;
 }
