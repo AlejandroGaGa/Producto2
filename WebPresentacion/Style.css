@@ -1,6 +1,5 @@
 ﻿body {
     background-color: #EB6666;
-
 }
 header {
     background-color: #BF3D3D;
@@ -14,4 +13,12 @@ Button {
     border-block-style: double;
 }
 
-
+.a {
+    border-block-color: #8F1F1F;
+}
+*a {
+    border-block-color: #8F1F1F;
+}
+#a{
+    border-block-color: #8F1F1F;
+}

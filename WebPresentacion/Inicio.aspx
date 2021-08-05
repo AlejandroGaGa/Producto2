@@ -19,10 +19,9 @@
     </header>
     
         <div class="container">
-            <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
-
-            <asp:Label ID="Label1" runat="server" Text="Creaciones de pedidos"></asp:Label>
-             <h5>* Deberas ingresar todos estos datos para crear el pedido</h5>
+            <div class="a col-xs-12 col-sm-8 col-md-4 col-lg-4">
+            <asp:Label ID="Label1" runat="server" Text="Creaciones de pedidos" Font-Size="XX-Large"></asp:Label>
+             <h6>* Deberas ingresar todos estos datos para crear el pedido</h6>
              <asp:Label ID="Label11" runat="server" Text="Registralo si es nuevo en tu carniceria"></asp:Label>
              <br />
                 <asp:Button ID="Button12" runat="server" OnClick="Button12_Click" Text="REPARTIDOR" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
@@ -43,7 +42,7 @@
             
 
         <div class="container">
-            <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+            <div class="a col-xs-12 col-sm-8 col-md-4 col-lg-4">
                             <p>Seleccionar un Carnicero*</p> 
             <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="CargarCarniceros" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
@@ -70,7 +69,7 @@
 
 
         <div class="container">
-            <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+            <div class="a col-xs-12 col-sm-8 col-md-4 col-lg-4">
             <p>Monto a cobrar*</p>
             <p>
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
@@ -80,7 +79,7 @@
 
 
         <div class="container">
-            <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+            <div class="a col-xs-12 col-sm-8 col-md-4 col-lg-4">
             <p>
                 <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Crear Pedido" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
                 <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Mostrar Pedidos" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
@@ -126,7 +125,7 @@
 
 
             <div class="container">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="a col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h4>Los pedidos los busca por nombre de cliente(Solo nombre)*</h4>
             <p>Ingrese el nombre del cliente
                 <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
@@ -151,7 +150,7 @@
        
 
         <div class="container">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="a col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <p>
             ¿que carnicero atendio el pedido Número
             <asp:DropDownList ID="DropClienteConsulta" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropClienteConsulta_SelectedIndexChanged">
