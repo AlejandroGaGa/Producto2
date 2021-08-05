@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
         <header>
     <div class="container">
-        <h1>Canicero</h1>
+        <img src="../Imag/carni.png" ><h1>Canicero</h1>
     </div>
     </header>
         <div>

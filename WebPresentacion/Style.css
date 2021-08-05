@@ -13,6 +13,11 @@ Button {
     border-block-style: double;
 }
 
+img{
+    width:50px;
+    height:50px;
+}
+
 #a{
     border-block-color: #8F1F1F;
 }

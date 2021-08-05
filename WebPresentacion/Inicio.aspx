@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
     <header>
     <div class="container">
-        <h1>Caniceria AGI</h1>
+        <img src="../Imag/carne.png" ><h1>Caniceria AGI</h1>
     </div>
     </header>
     
@@ -49,12 +49,12 @@
             <div class="a col-xs-12 col-sm-8 col-md-4 col-lg-4">
                 <br />
                 
-                            <h4>Seleccionar un Carnicero*</h4> 
+                            <p>Seleccionar un Carnicero*</p> 
             <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 <asp:Button ID="Button9" runat="server" OnClick="Button9_Click" Text="CargarCarniceros" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
                     <br />
             <asp:Label ID="lbCarn" runat="server"></asp:Label><br />
-            <h4>Seleccionar cliente*</h4> 
+            <p>Seleccionar cliente*</p> 
             <asp:DropDownList ID="dplClient" runat="server" OnSelectedIndexChanged="dplClient_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
             <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="Cargar Clientes" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
             <br />
