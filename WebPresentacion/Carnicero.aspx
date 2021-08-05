@@ -32,11 +32,11 @@
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
             <br />
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" />
-        <asp:Button ID="Button2" runat="server" Text="Mostrar" OnClick="Button2_Click" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button2" runat="server" Text="Mostrar" OnClick="Button2_Click" BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" BackColor="#E68282" BorderColor="#FFD5D5" />
         <br />
-        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BorderColor="#E68282">
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Editar" ShowHeader="True" Text="Elegir" />
             </Columns>

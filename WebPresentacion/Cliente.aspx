@@ -17,7 +17,7 @@
         <h1>Cliente</h1>
     </div>
     </header>
-        <div>
+        <div class="container">
             <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 &nbsp;<br />
@@ -33,17 +33,24 @@
             <asp:Label ID="Label4" runat="server" Text="Email"></asp:Label>
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar Todos" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" />
-        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Eliminar" />
+
+        <div class="container">    
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar Todos" BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Eliminar" BackColor="#E68282" BorderColor="#FFD5D5" />
         <br />
         <br />
-        No podra eliminar un cliente a menos que no tenga un pedido en curso<asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <h5>*No podra eliminar un cliente a menos que no tenga un pedido en curso</h5>
+        </div>
+
+        <div class="container">
+                <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" BorderColor="#E68282">
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Editar" ShowHeader="True" Text="Elegir" />
             </Columns>
         </asp:GridView>
+            </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>

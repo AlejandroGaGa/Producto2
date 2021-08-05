@@ -27,11 +27,11 @@
             <asp:Label ID="Label3" runat="server" Text="Licencia"></asp:Label>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar " />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Editar" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar " BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Mostrar" BackColor="#E68282" BorderColor="#FFD5D5" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Editar" BackColor="#E68282" BorderColor="#FFD5D5" />
         <br />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="GridView1" runat="server" BorderColor="#E68282">
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Editar" ShowHeader="True" Text="Editar" />
             </Columns>
