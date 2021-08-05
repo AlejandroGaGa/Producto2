@@ -17,6 +17,13 @@
         <img src="../Imag/carni.png" ><h1>Canicero</h1>
     </div>
     </header>
+        <br />
+        <br />
+        <br />
+        <br />
+         <br />
+        <br />
+        <br />
         <div>
             Insertar Carnicero<br />
             <span class="input-group-text" id="inputGroup-sizing-lg">Nombre</span>

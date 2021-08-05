@@ -17,6 +17,13 @@
         <img src="../Imag/clien.png" ><h1>Cliente</h1>
     </div>
     </header>
+          <br />
+        <br />
+        <br />
+        <br />
+         <br />
+        <br />
+        <br />
         <div class="container">
             <span class="input-group-text" id="inputGroup-sizing-lg">Nombre</span>
             <asp:TextBox ID="TextBox1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
