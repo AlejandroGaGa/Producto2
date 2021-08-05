@@ -19,17 +19,17 @@
     </header>
         <div>
             Insertar Carnicero<br />
-            <asp:Label ID="Label1" runat="server" Text="Nombre: "></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Nombre</span>
+            <asp:TextBox ID="TextBox1"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Cel: "></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Celular</span>
+            <asp:TextBox ID="TextBox2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Email: "></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Email</span>
+            <asp:TextBox ID="TextBox3" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Año de experiencia: "></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <span class="input-group-text" id="inputGroup-sizing-lg">Años de Experiencia</span>
+            <asp:TextBox ID="TextBox4" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" runat="server"></asp:TextBox>
             <br />
         </div>
         <asp:Button ID="Button1" class="btn btn-danger" runat="server" OnClick="Button1_Click" Text="Insertar" BorderColor="#FFD5D5" BorderStyle="Double" />
@@ -51,7 +51,7 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Inicio" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" Width="249px"/>
+        <asp:Button ID="Button4" class="btn btn-danger" runat="server" OnClick="Button4_Click" Text="Inicio"  BorderColor="#FFD5D5" BorderStyle="Double" Width="249px"/>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
