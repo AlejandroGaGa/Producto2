@@ -12,7 +12,7 @@ namespace LogicadeNegocios
 {
     public class LogicaNego
     {
-        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=LAPTOP-3GAI31AJ\MSSQLSERVER01; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
+        AccesoaDatos accesdataline = new AccesoaDatos(@"Data Source=DESKTOP-0ERJ6MC; Initial Catalog=PedidosCarniceria; Integrated Security = true;");
         // datos desde entity para hacfer muestras anti inyecciones
         PedidosCarniceriaEntities objEntity = new PedidosCarniceriaEntities();
 

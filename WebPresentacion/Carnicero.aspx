@@ -32,9 +32,9 @@
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
             <br />
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
-        <asp:Button ID="Button2" runat="server" Text="Mostrar" OnClick="Button2_Click" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Actualizar" BackColor="#E68282" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button1" class="btn btn-danger" runat="server" OnClick="Button1_Click" Text="Insertar" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button2" class="btn btn-danger" runat="server" Text="Mostrar" OnClick="Button2_Click" BorderColor="#FFD5D5" BorderStyle="Double" />
+        <asp:Button ID="Button3" class="btn btn-danger" runat="server" OnClick="Button3_Click" Text="Actualizar" BorderColor="#FFD5D5" BorderStyle="Double" />
         <br />
         <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#E68282" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
