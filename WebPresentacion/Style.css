@@ -1,4 +1,10 @@
 ﻿body {
-    background-color: darkorange;
-    background-position:center;
+    background-color: #EB6666;
 }
+header {
+    background-color: #BF3D3D;
+    background-position: center;
+    color: white;
+}
+
+
